@@ -1,0 +1,70 @@
+body{
+     background-image: url(https://thumbs.dreamstime.com/b/vegetables-pattern-vector-seamless-background-35125219.jpg);
+    /* background-color: rgb(91, 223, 157); */
+    color: white;
+    font-family: monospace;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.icons a:hover {
+    transform: scale(1.05);
+     }
+     /* ANA MENÜ BAŞLANGIÇ */
+.menu
+{
+    font-size:18px;
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+.menu ul
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    scroll-behavior: smooth;
+    position: absolute;
+    left: 1350px;
+    top: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center; 
+}
+.menu ul li
+{
+    position: relative;
+    right: 70px;
+    list-style: none;
+    margin-left: 20px;   
+}
+.menu ul li a
+{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: rgb(255, 255, 255);
+    background-color:#aad11b ;
+    border-radius: 20px;
+}
+.menu ul li a:hover,
+.menu ul li a.active
+{
+    background: rgb(255, 255, 255);
+    color:#000000;
+}
+/* ANA MENÜ BİTİŞ */
+
+/* ANA SAYFA ÜRÜN SABLONLARI */
+.sablon
+{
+    position:relative; 
+    text-align:center; 
+    top:160px; 
+}
+

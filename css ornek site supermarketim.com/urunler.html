@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="style.css">
+   <title>Ürünler</title>
+<style>
+    .main{
+      display:flex;
+    }
+    @media only screen and (max-width:500px){
+      .main{
+          flex-direction: column;
+          margin:30px;
+        }
+    }
+    .main  .card{
+      width: 90%;
+      height: 500px;
+      width: 300px;
+      
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(242,245,248,1) 35%, rgba(236,236,237,1) 100%);
+      box-shadow: 0 13px 15px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      margin: 30px 20px 20px 10px;
+      transition: background-color .5s, box-shadow .5s, margin-left .5s;
+    }
+    .main  .card:hover{
+      background-color: #ffff;
+      box-shadow: 0 30px 30px rgba(0, 0, 0, 0.3);
+      transition: background-color .5s, box-shadow .5s, margin-left .5s;
+    }
+    .main   .post-image{
+      width: 92%;
+      height: 220px;
+      margin: 15px;
+      border-radius: 10px 10px 10px;
+      float: left;
+    }
+    .main   .post-content{
+      width: 90%;
+      height: 250px;
+      float: left;
+      margin-left: 5px;
+      overflow: hidden;
+    }
+    .main a{
+      font-size: 28px;
+      font-family: 'Roboto', sans-serif;
+      color: #000;
+      text-decoration: none;
+    }
+    .main   .post-header{
+      font-size: 28px;
+      font-family: 'Roboto', sans-serif;
+      margin-top: 15px;
+      color: #000000;
+      margin-left: 10px;
+      text-align: center;
+    }
+    .main    .post-text{
+      font-size: 15px;
+      padding-left: 20px;
+      color: #000;
+      font-family: 'Roboto', sans-serif;
+      
+    }
+    .main  .author{
+      width: 95%;
+      height: 60px;
+      background-color: #12192c;
+      margin-left: 20px;
+      margin-top: 5px;
+      color:#fff;
+      border-radius:15px;
+    }
+    .main  .author-content{
+      width: 60%;
+      height: 60px;
+      margin-left: 10px;
+      float: left;
+      color:#fff
+    }
+  
+    .main  .author-name{
+      font-size: 20px;
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold;
+      margin-top: 10px;
+      padding-left: 10px;
+    }
+    .main  .date{
+      font-size: 13px;
+      font-family: 'Roboto', sans-serif;
+      margin-top: -15px;
+      padding-left: 10px;
+    }
+    /* FOOTER START */
+  .footer 
+    {
+      background-color: #414141;
+      position: relative;
+      top:200px;
+      right:10px;
+      width: 100%;
+      text-align: left;
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 50px;
+      margin-top: 40px;
+      padding-bottom:10px;
+    }
+    .footer .footer-left,
+    .footer .footer-center,
+    .footer .footer-right
+      {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .footer-right
+    {
+      text-align: center;
+      position: relative;
+      top: -20px;
+    }
+    
+    .footer-center
+    {
+          position: relative;
+          right: -80px;
+    }
+
+    /* footer left*/
+    
+    .footer .footer-left {
+      width: 33%;
+      padding-right: 15px;
+    }
+    
+    .footer .about {
+      line-height: 19px;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: normal;
+      margin: 0;
+    }
+    
+    .footer .about span 
+    {
+      display: block;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    
+    .footer .icons
+      {
+    
+        position: relative;
+        display: flex;
+        margin-top: 15px;  
+        left:-8px;  
+    }
+    
+    .footer .icons a {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        background: #096b65;
+        color:#fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        margin: 7px;    
+        font-size: 20px;
+    }
+    
+    /* footer center*/
+    
+    .footer .footer-center {
+      width: 30%;
+    }
+    
+    .footer .footer-center i {
+      background-color: #096b65;
+      color: #ffffff;
+      font-size: 25px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 42px;
+      margin: 10px 15px;
+      vertical-align: middle;
+    }
+    
+    .footer .footer-center i.fa-envelope {
+      font-size: 17px;
+      line-height: 38px;
+    }
+    
+    .footer .footer-center p {
+      display: inline-block;
+      color: #ffffff;
+      vertical-align: middle;
+      margin: 0;
+    }
+    
+    .footer .footer-center p span {
+      display: block;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 2;
+    }
+    
+    .footer .footer-center p a {
+      color: #0099ff;
+      text-decoration: none;
+    }
+
+    /* footer right*/
+    
+    .footer .footer-right {
+      width: 35%;
+    }
+    
+    .footer h2 {
+      color: #ffffff;
+      font-size: 36px;
+      font-weight: normal;
+      margin: 0;
+    }
+    
+    .footer h2 span {
+      color: #0099ff;
+    }
+    
+    .footermenu {
+      color: #ffffff;
+      margin: 20px 0 12px;
+      padding: 0;
+    }
+    
+    .footermenu a {
+      display: inline-block;
+      line-height: 1.8;
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    .footermenu a:hover {
+      color: #0099ff;
+    }
+    
+    .footer .name {
+      color: #0099ff;
+      font-size: 14px;
+      font-weight: normal;
+      margin: 0;
+    }
+    
+    @media (max-width: 767px ) {
+      .footer {
+        font-size: 14px;
+      }
+      .footer .footer-left,
+      .footer .footer-center,
+      .footer .footer-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+        
+      }
+      .footer .footer-center i {
+        margin-left: 0;
+      }
+    }
+    /* FOOTER Finish */
+  </style>
+</head>
+<body>
+  <div class="menu">
+      <ul>
+        <li><a href="index.html">ANA SAYFA</a></li>
+        <li><a href="about-us.html">HAKKIMIZDA</a></li>
+        <li><a href="urunler.html">ÜRÜNLER</a></li>
+        <li><a href="contact.html">İLETİŞİM</a></li>  
+    </ul>
+</div>
+<a href="index.html">
+<img style="border-radius:20px 20px; position:fixed;left:30px; top:15px; height:70px;" src="https://img.freepik.com/free-vector/street-market-business-company-logo_23-2148462526.jpg?w=2000" alt="logo" >
+</a>
+  <!-- MEYVE SEBZE -->
+ <div style="position:relative; top:50px;" class="reyonlar">
+<h1 style="text-align: center; color: rgb(31, 84, 184);font-size: 45px; font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">	
+  &#127817; Meyve & Sebze 	
+  &#129365; </h1><hr>
+<img style="border-radius:15px 15px; height:500px;" src="https://www.eskitadinda.com/img/saglikli_yasam/2/organik-meyve-sebzelerin-farki-nedir_262_2.jpg"   alt="meyve sebze">
+
+<div style="position: relative; left: 800px; top: -530px; resize: both;
+    max-height: 130px;" class="main">
+  <div class="card">
+  <div class="post">
+    <img class="post-image" src="https://img-pttavm.mncdn.com/pimages/592/119/247/612c94bd34327.jpg?v=201910111528"/>
+    
+    <div class="post-content">
+      <p class="post-header"> <a href="#">Portakal</a> </p>
+      <p class="post-text">
+        İçerisindeki yüksek C vitamini bağışıklık sistemini destekleyerek kış hastalıklarından korunmaya yardımcı olur.
+        Yapısı orta sertlikte ve ağır olanların daha fazla suyu olur. 
+       
+      </p>
+      <div class="author">
+        <div class="author-content">
+          <p class="author-name">1 KG </p>
+          <p class="date">13,95 TL</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+
+<div class="card">
+  <div class="post">
+    <img class="post-image" src="https://productimages.hepsiburada.net/s/41/1500/10698082517042.jpg"/>
+    
+    <div class="post-content">
+      <p class="post-header"> <a href="#"> Lime </a> </p>
+      <p class="post-text">
+        Lime, C vitamini başta olmak üzere vitamin ve mineral açısından zengin bir tropikal bir turunçgil çeşididir. Tatlımsı keskin bir ekşi tada sahiptir.</p>
+      <div style="position: relative; top:17px;" class="author">
+        
+        <div  class="author-content">
+          <p class="author-name">195 G</p>
+          <p class="date">25,90 TL</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="post">
+    <img class="post-image" src="https://migros-dali-storage-prod.global.ssl.fastly.net/sanalmarket/product/28270004/misir-adet-d61636-1650x1650.jpg"/>
+    
+    <div class="post-content">
+      <p class="post-header"> <a href="#">Mısır</a> </p>
+      <p class="post-text">
+        Mısırı haşlayıp tuz ekleyerek tüketebileceğiniz gibi, haşladıktan sonra salataların ya da ev yapımı pizzaların içine de ekleyebilirsiniz. 
+        
+      </p>
+      <div style="position: relative; top:17px;" class="author">
+        
+        <div class="author-content">
+          <p class="author-name"> Adet</p>
+          <p class="date">7,90 TL</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+</div>
+
+<!-- ET -->
+
+<h1 style="text-align: center; color: rgb(31, 84, 184);font-size: 45px; font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">&#129385; Et</h1><hr>
+<img style="border-radius:15px 15px; height:510px;" src="https://www.egeligazete.com/wp-content/uploads/2022/03/kirmiziet-min.jpg " alt="et">
+
+<div style="position: relative; left: 800px; top: -540px; resize: both;
+    max-height: 130px;" class="main">
+  <div class="card">
+  <div class="post">
+    <img class="post-image" src="https://migros-dali-storage-prod.global.ssl.fastly.net/sanalmarket/product/25010012/25010012-3721b1-1650x1650.jpg"/>
+    
+    <div class="post-content">
+      <p class="post-header"> <a href="#">Dana Kontrafile</a> </p>
+      <p class="post-text">
+         Kontrafile Danaların sırt kısmından elde edilir ve antrikota göre daha az yağlıdır. 
+         Kontrefileyi daha yumuşak yemek isterseniz bir akşam önceden marine edebilirsiniz. 
+       
+      </p>
+      <div class="author">
+        <div class="author-content">
+          <p class="author-name">1 KG </p>
+          <p class="date">175,95 TL</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+
+<div class="card">
+  <div class="post">
+    <img class="post-image" src="https://migros-dali-storage-prod.global.ssl.fastly.net/sanalmarket/product/46040139/46040139-f4dfb8-1650x1650.jpg"/>
+    
+    <div class="post-content">
+      <p class="post-header"> <a href="#"> Piliç Bonfile </a> </p>
+      <p class="post-text">
+        Tavuğun yumuşak göğüs etinden oluşur.
+        Deri ve kemiklerinin tamamen temizlenmiş olması, kullanıcıya büyük kolaylık sağlıyor.</p>
+      <div style="position: relative; top:17px;" class="author">
+        
+        <div  class="author-content">
+          <p class="author-name">1 KG </p>
+          <p class="date">97,90 TL</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="post">
+    <img class="post-image" src="https://migros-dali-storage-prod.global.ssl.fastly.net/sanalmarket/product/21000030/21000030-bc2b59.jpg"/>
+    
+    <div class="post-content">
+      <p class="post-header"> <a href="#">Norveç Somon </a> </p>
+      <p class="post-text">
+        Soğuk denizlerden sofralarımıza gelen Norveç Somonu, zengin Omega 3 yağ asitlerine sahip soğuk su balığıdır. 
+        
+      </p>
+      <div style="position: relative; top:18px;" class="author">
+        
+        <div class="author-content">
+          <p class="author-name">1 KG</p>
+          <p class="date">425,00 TL</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+</div>
+<!-- FIRIN -->
+
+<h1 style="text-align: center; color: rgb(31, 84, 184);font-size: 45px; font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; ">	
+	&#127856; Fırın</h1><hr>
+<img style="border-radius:15px 15px; height:510px;" src="https://parakazanmafikirleri.com/wp-content/uploads/2020/11/Ekmek-firini-acmak.jpg " alt="fırın">
+<div style="position: relative; left: 800px; top: -540px; resize: both;
+    max-height: 130px;" class="main">
+  <div class="card">
+  <div class="post">
+    <img class="post-image" src="https://i.lezzet.com.tr/images-xxlarge-recipe/kestaneli-yas-pasta-87f9de18-f137-41fe-aaf2-7eac8939cae4.jpg"/>
+    
+    <div class="post-content">
+      <p class="post-header"> <a href="#">Yaş Pasta</a> </p>
+      <p class="post-text">
+        Krema kaplı, genellikle çikolata ve yaş meyvelerle yapılır. 
+        Yaş pastaların hamurunu kabartmak için maya katılmaz, karbonat ya da hamur kabartma tozu kullanılır.
+        
+      </p>
+      <div class="author">
+        <div class="author-content">
+          <p class="author-name">Adet </p>
+          <p class="date">149,90 TL</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+
+<div class="card">
+  <div class="post">
+    <img class="post-image" src="https://www.gunduzoglu.com.tr/UserFiles/Fotograflar/org/169-su-boregi-su-boregi-su-boregi.jpg"/>
+    
+    <div class="post-content">
+      <p class="post-header"> <a href="#"> Su Böreği </a> </p>
+      <p class="post-text">
+        Özenle açılmış yufkaların tek tek haşlanmasıyla elde edilen çıtır çıtır su böreği, damağınızda unutamayacağınız bir tat bırakır. 
+        </p>
+      <div style="position: relative; top:17px;" class="author">
+        
+        <div  class="author-content">
+          <p class="author-name">1 KG </p>
+          <p class="date">95,90 TL</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="post">
+    <img class="post-image" src="https://www.kadayifal.com/wp-content/uploads/2020/05/saim-usta-fistikli-baklava.jpg"/>
+    
+    <div class="post-content">
+      <p class="post-header"> <a href="#">Fıstıklı Baklava </a> </p>
+      <p class="post-text">
+        Türk tatlıları arasında en çok sevilen lezzetlerden olan Fıstıklı Baklava Gaziantep yöresine ait bir tatlıdır.
+        
+      </p>
+      <div style="position:relative; top:33px;" class="author">
+        
+        <div class="author-content">
+          <p class="author-name">1 KG</p>
+          <p class="date">219,90 TL</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+</div>
+<!-- ELEKTRONİK -->
+
+<h1 style="text-align: center; color: rgb(31, 84, 184);font-size: 45px; font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">	
+&#128187; Elektronik</h1><hr>
+<img style="border-radius:15px 15px; height:515px;" src="https://www.greenbiz.com/sites/default/files/2022-04/varietyofelectronics_shutterstock_DAMRONGRATTANAPONG.jpeg" alt="tekno">
+<div style="position: relative; left: 800px; top: -545px; resize: both;
+    max-height: 130px;" class="main">
+  <div class="card">
+  <div class="post">
+    <img class="post-image" src="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_87298715/fee_325_225_png/APPLE-iPhone-13-128-GB-Ak%C4%B1ll%C4%B1-Telefon-Mavi"/>
+    
+    <div class="post-content">
+      <p class="post-header"> <a href="#">APPLE iPhone 13 128 GB  </a> </p>
+      <p class="post-text">
+         ProMotion teknolojisine sahip 6.7 inç Super Retina XDR ekran
+       
+        
+      </p>
+      <div style="position:relative; top:20px; " class="author">
+        <div class="author-content">
+          <p class="author-name">  Mavi </p>
+          <p class="date">22.499,00 TL</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+
+<div class="card">
+  <div class="post">
+    <img class="post-image" src="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_94297702/fee_786_587_png/SAMSUNG-75QN900B-75%22-189-Ekran-Uydu-Al%C4%B1c%C4%B1l%C4%B1-Smart-8K-Ultra-HD-Neo-QLED-TV"/>
+    
+    <div class="post-content">
+      <p class="post-header"> <a href="#"> SAMSUNG 75QN900B 75"   </a> </p>
+      <p class="post-text">
+        Uydu Alıcılı Smart 8K Ultra HD Neo QLED TV
+        
+        </p>
+      <div style="position: relative; top:17px;" class="author">
+        
+        <div  class="author-content">
+          <p class="author-name">189 Ekran </p>
+          <p class="date">117.599 TL</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="post">
+    <img class="post-image" src="https://www.segment.com.tr/resimler/images/forte-y-rgb/5.jpg"/>
+    
+    <div class="post-content">
+      <p class="post-header"> <a href="#">Rampage RM-19 FORTE-Y  </a> </p>
+      <p class="post-text">
+         Surround Led Işıklı Mikrofonlu Oyuncu Kulaklığı
+        
+      </p>
+      <div style="position:relative; top:18px;" class="author">
+        
+        <div class="author-content">
+          <p class="author-name">RGB USB 7.1</p>
+          <p class="date">429 TL</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+    <!-- FOOTER START -->
+    <footer class="footer">
+        <div class="footer-left col-md-4 col-sm-6">
+          <p class="about">
+            <span> Misyonumuz</span> İleri teknikleri ve son teknolojileri kullanarak, Ar-Ge çalışmalarımızı sürekli arttırarak Dünya pazarlarında kabul gören en yüksek standartlara sahip kaliteli ürünlerimizle uluslar arası bir marka olmak ve satış sonrası hizmetlerde hemen ulaşılabilirlik avantajımızla sürekli yenilikçi çözümler üretmektir.
+          </p>
+          <div class="icons">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/ahmetruyan/" target="_blank"><i class="fa fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-center col-md-4 col-sm-6">
+          <div> <a href="https://goo.gl/maps/yrMGErm5ftMXhM2h8" target="_blank">
+            <i class="fa fa-map-marker"></i></a>
+            <p ><span>Doğanbey Mahallesi, Talatpaşa Blv No:38</span> Ankara</p>
+          </div>
+          <div>
+            <a href="tel://+90800 000 0 000">
+            <i class="fa fa-phone"></i></a>
+            <p>0800 000 0 000 </p>
+          </div>
+          <div>
+      <a href="mailto:for@example.com">
+            <i class="fa fa-envelope"></i><a>
+            <p>E mail</p>
+          </div>
+        </div>
+        <div class="footer-right col-md-4 col-sm-6">
+         <a href="#"> 
+          <img style="height: 80px; border-radius:20px 20px;" src="https://img.freepik.com/free-vector/street-market-business-company-logo_23-2148462526.jpg?w=2000 ">
+          <p class="footermenu">
+            <a href="index.html">&#127968; Ana Sayfa</a> |
+            <a href="about-us.html">&#128209; Hakkımızda </a> |
+            <a href="urunler.html">&#128722; Ürünler </a> |
+            <a href="contact.html">&#128222; İletişim</a> 
+           
+          </p>
+          <p class="name">SuperMarketim &copy; 2022 All Right Reserved</p>
+          <p style="font-family:cursive;  color:rgb(7, 194, 194) ;">&#9889; Made by Ahmet Ruyan</p>
+        </div>
+      </footer> 
+
+<script language="JavaScript">
+
+    var left=" ";
+    var right=" ";
+    var msg="SuperMarketim.com Kalitenin Adresi ";
+    var speed=350;
+     
+    function scroll_title() {
+            document.title=left+msg+right;
+            msg=msg.substring(1,msg.length)+msg.charAt(0);
+            setTimeout("scroll_title()",speed);
+    }
+    scroll_title();
+     
+    </script>
+</body>
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="style.css">
+   <title>Ana Sayfa</title>
+ <!-- SLİDER -->
+ <style>
+h2, p {
+    margin: 30px 0 0;
+    padding: 0;
+} 
+p {
+    color: #072f5f;
+}
+.slider {
+    position: relative;
+    top:110px;
+    max-width: 1170px;
+    width: 90%;
+    margin: 15px auto;
+    background: linear-gradient(to right, #aad11b, #e47f0b);
+    border-radius: 15px;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); 
+}
+.slick-slider button{ 
+    position: absolute;
+    top: 50%;
+    background: #fff;
+    border: none;
+    outline: none;
+    z-index:100;
+    width: 50px;
+    height: 50px; 
+    color: transparent;
+    cursor: pointer;
+    transform: translate(0%,-70%);
+    border-radius: 36px;
+    box-shadow: 0px 2px 20px rgba(0,0,0,0.07);
+}
+.slick-slider .slick-prev{
+    left:-30px;
+}
+.slick-slider .slick-prev::before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f104";
+    font-size:30px;
+    color: #072f5f;
+    left: 8px;
+    position: relative;
+    z-index: 10;
+}
+.slick-slider .slick-next{
+    right:-30px;
+}
+.slick-slider .slick-next::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f105";
+    font-size:30px;
+    color: #072f5f;
+    right: 15px;
+    position: relative;
+    z-index: 10;
+}
+.slick-slide {
+    color: #333;
+    padding: 40px 0;
+    font-size: 1 em;
+    font-family: "Verdana";
+    text-align: center;
+    pointer-events: none;
+}
+.slick-slide .desc {
+    opacity: 0;
+}
+.slick-slide .desc>* {
+    transition: all 900ms ease;
+}
+.slick-slide .desc h2 {
+    position: relative;
+    left: 50px;
+    line-height: 1;
+}
+.slick-slide .desc h2 span{
+    color:#bcdee7;
+}
+.slick-slide .desc p {
+    position: relative;
+    top: 50px;
+    opacity: 0;
+}
+.slick-slide img {
+    width: 100%;
+}
+.slick-prev:before,
+.slick-next:before {
+    color: black;
+}
+.slick-dots {
+    text-align: center;
+}
+.slick-dots li {
+    display: inline-block;
+    padding: 3px;
+    background: #ccc;
+    margin: 10px 5px;
+    width: 40px;
+    height: 4px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.slick-dots li.slick-active {
+    background: #072f5f;
+}
+.slick-dots button {
+    display: none;
+}
+.slick-slide {
+    opacity: 0.2;
+    transition: all 300ms ease;
+}
+.slick-current {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.slick-current .desc {
+    opacity: 1;
+}
+.slick-current .desc h2 {
+    left: 0; 
+}
+.slick-current .desc p {
+    top: 0;
+    opacity: 1;
+}
+.btn {
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: 2px solid #072f5f;
+    text-decoration: none;
+    color: #072f5f;
+    font-size: .6em;
+    text-transform: uppercase;
+    display: block;
+    margin: 30px auto 0;
+    max-width: 100px;
+    width: 100%;
+    font-weight: bold;
+    pointer-events: initial;
+}
+.credit{
+    text-align: center;
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.credit a{
+    text-decoration: none;
+    color: #bcdee7;
+    font-weight: bold;
+}
+.footer 
+  {
+    background-color: #414141;
+    position: relative;
+    top:170px;
+    right:10px;
+    width: 100%;
+    text-align: left;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 50px;
+    margin-top: 40px;
+    padding-bottom:10px;
+  
+  }
+  
+  .footer .footer-left,
+  .footer .footer-center,
+  .footer .footer-right
+   {
+    display: inline-block;
+    vertical-align: top;
+   
+  }
+  .footer-right
+  {
+   text-align: center;
+  }
+  
+  .footer-center
+  {
+       position: relative;
+       right: -80px;
+  }
+  
+  /* footer left*/
+  
+  .footer .footer-left {
+    width: 33%;
+    padding-right: 15px;
+  }
+  
+  .footer .about {
+    line-height: 19px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  .footer .about span 
+  {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  .footer .icons
+   {
+  
+     position: relative;
+      display: flex;
+      margin-top: 15px;  
+      left:-8px;  
+  
+  }
+  
+  .footer .icons a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      background: #096b65;
+      color:#fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      margin: 7px;    
+      font-size: 20px;
+  }
+  
+  /* footer center*/
+  
+  .footer .footer-center {
+    width: 30%;
+  }
+  
+  .footer .footer-center i {
+    background-color: #096b65;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+  }
+  
+  .footer .footer-center i.fa-envelope {
+    font-size: 17px;
+    line-height: 38px;
+  }
+  
+  .footer .footer-center p {
+    display: inline-block;
+    color: #ffffff;
+    vertical-align: middle;
+    margin: 0;
+  }
+  
+  .footer .footer-center p span {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+  }
+  
+  .footer .footer-center p a {
+    color: #0099ff;
+    text-decoration: none;
+  }
+  
+  /* footer right*/
+  
+  .footer .footer-right {
+    width: 35%;
+  }
+  
+  .footer h2 {
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  .footer h2 span {
+    color: #0099ff;
+  }
+  
+  .footermenu {
+    color: #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+  }
+  
+  .footermenu a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .footermenu a:hover {
+    color: #0099ff;
+  }
+  
+  .footername {
+    color: #0099ff;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+  }
+  .footername2 {
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  @media (max-width: 767px ) {
+    .footer {
+      font-size: 14px;
+    }
+    .footer .footer-left,
+    .footer .footer-center,
+    .footer .footer-right {
+      display: block;
+      width: 100%;
+      margin-bottom: 40px;
+      text-align: center;
+      
+    }
+    .footer .footer-center i {
+      margin-left: 0;
+    }
+  }
+  /* FOOTER Finish */
+  
+ </style>
+</head>
+
+<body> 
+  <div class="menu">
+    <ul>
+      <li><a href="index.html">ANA SAYFA</a></li>
+      <li><a href="about-us.html">HAKKIMIZDA</a></li>
+      <li><a href="urunler.html">ÜRÜNLER</a></li>
+      <li><a href="contact.html">İLETİŞİM</a></li>  
+  </ul>
+     
+</div>
+  <a href="index.html">
+    <img style="border-radius:20px 20px; position:fixed;left:30px;" src="https://img.freepik.com/free-vector/street-market-business-company-logo_23-2148462526.jpg?w=2000" height="70" alt="logo">
+    </a>
+</div>
+<!-- SLİDER -->
+  <section class="slider">
+    <div>
+      <img style="border-radius:20px 20px;" src="https://migrostvstr.blob.core.windows.net/migrostv/2021/08/domates-kg-c7462d-1650x1650-1.jpg">
+      <div class="desc">
+        <h2><span>Domates</span> 1 KG </h2>
+        <p>₺11,95</p>
+        <a href="#" class="btn">Satın Al</a>
+      </div>
+    </div>
+  
+    <div>
+      <img style="border-radius:20px 20px;" src="https://migros-dali-storage-prod.global.ssl.fastly.net/sanalmarket/product/28290036/28290036-6a65f9-1650x1650.jpg">
+      <div class="desc">
+        <h2><span>Patates</span> 1 KG </h2>
+        <p>₺7,70 TL</p>
+        <a href="#" class="btn">Satın Al</a>
+      </div>
+    </div>
+  
+    <div>
+      <img style="border-radius:20px 20px;" src="https://migros-dali-storage-prod.global.ssl.fastly.net/sanalmarket/product/28120036/28120036-a19bd0-1650x1650.jpg">
+      <div class="desc">
+        <h2><span>Havuç</span> 250 G</h2>
+        <p>₺4.45</p>
+        <a href="#" class="btn">Satın Al</a>
+      </div>
+    </div>
+  
+    <div>
+      <img style="border-radius:20px 20px;" src="https://migros-dali-storage-prod.global.ssl.fastly.net/sanalmarket/product/28260009/maydanoz-adet-659b84-1650x1650.jpg">
+      <div class="desc">
+        <h2><span>Maydanoz</span> Adet</h2>
+        <p>₺4,45 </p>
+        <a href="#" class="btn">Satın Al</a>
+      </div>
+    </div>
+  
+    <div>
+      <img style="border-radius:20px 20px;" src="https://www.sebzemeyvedunyasi.com/Uploads/UrunResimleri/Kivircik-Marul-cb9a.png" >
+      <div class="desc">
+        <h2><span> Kıvırcık </span>  Adet</h2>
+        <p>₺8,45</p>
+        <a href="#" class="btn">Satın Al</a>
+      </div>
+    </div>
+  </section> 
+
+<div class="sablon">
+  <a href="urunler.html">
+
+<img style="border-radius:20px 20px; margin: 20px;" src="https://ayb.akinoncdn.com/cms/2021/08/26/2c910da0-d617-41f4-b192-51de0330d456.jpg" alt="">
+
+<img style="border-radius:20px 20px; margin: 20px;" src="https://ayb.akinoncdn.com/cms/2021/06/15/49ade922-791e-43d4-8f8b-38ff10c1de78.jpg" alt="">
+
+<img style="border-radius:20px 20px; margin: 20px;" src="https://ayb.akinoncdn.com/cms/2022/06/29/86066082-9f70-4e66-b27f-a363dc2b19cb.jpg" alt="">
+
+<img style="border-radius:20px 20px; margin: 20px;" src="https://ayb.akinoncdn.com/cms/2022/06/29/e1e0d99a-9a82-4df4-bede-a654c9feca75.jpg" alt="">
+
+<img style="border-radius:20px 20px; margin: 20px;" src="https://ayb.akinoncdn.com/cms/2022/06/29/2b9ade99-c835-41ba-bd3c-075386b7f848.jpg" alt="">
+
+
+</a>
+</div>
+
+
+<footer class="footer">
+   <div class="footer-left col-md-4 col-sm-6">
+      <p class="about">
+        <span> Misyonumuz</span> İleri teknikleri ve son teknolojileri kullanarak, Ar-Ge çalışmalarımızı sürekli arttırarak Dünya pazarlarında kabul gören en yüksek standartlara sahip kaliteli ürünlerimizle uluslar arası bir marka olmak ve satış sonrası hizmetlerde hemen ulaşılabilirlik avantajımızla sürekli yenilikçi çözümler üretmektir.
+      </p>
+      <div class="icons">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/ahmetruyan/" target="_blank"><i class="fa fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-center col-md-4 col-sm-6">
+      <div> <a href="https://goo.gl/maps/yrMGErm5ftMXhM2h8" target="_blank">
+        <i class="fa fa-map-marker"></i></a>
+        <p ><span>Doğanbey Mahallesi, Talatpaşa Blv No:38</span> Ankara</p>
+      </div>
+      <div>
+        <a href="tel://+90800 000 0 000">
+        <i class="fa fa-phone"></i></a>
+        <p>0800 000 0 000 </p>
+      </div>
+      <div>
+  <a href="mailto:for@example.com">
+        <i class="fa fa-envelope"></i><a>
+        <p>E mail</p>
+      </div>
+    </div>
+    <div class="footer-right col-md-4 col-sm-6">
+     <a href="#"> 
+      <img style="height: 80px; border-radius:20px 20px;" src="https://img.freepik.com/free-vector/street-market-business-company-logo_23-2148462526.jpg?w=2000 ">
+      <p class="footermenu">
+        <a href="index.html">&#127968; Ana Sayfa</a> |
+        <a href="about-us.html">&#128209; Hakkımızda </a> |
+        <a href="urunler.html">&#128722; Ürünler </a> |
+        <a href="contact.html">&#128222; İletişim</a> 
+      </p>
+      <p class="footername">SuperMarketim &copy; 2022 All Right Reserved</p>
+      <p class="footername2" style="font-family:cursive;  color:rgb(7, 194, 194) ;">&#9889; Made by Ahmet Ruyan</p>
+    </div>
+  </footer>
+ 
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script> 
+<script type="text/javascript" src="script.js"></script>
+<script>
+function createSlick(){  
+  $(".slider").not('.slick-initialized').slick({
+    centerMode: true,
+      autoplay: true,
+      dots: true, 
+        arrows: true,
+      slidesToShow: 3,
+      responsive: [{ 
+          breakpoint: 768,
+          settings: {
+              dots: false,
+              arrows: false,
+              infinite: true,
+              slidesToShow: 1,
+              slidesToScroll: 1
+          } 
+      }]
+  }); 
+} 
+createSlick();
+$(window).on( 'resize', createSlick );
+
+</script>
+        <!-- KAYAN TİTLE -->
+<script language="JavaScript">
+
+        var left=" ";
+        var right=" ";
+        var msg="SuperMarketim.com Kalitenin Adresi ";
+        var speed=350;
+        
+        function scroll_title() {
+                document.title=left+msg+right;
+                msg=msg.substring(1,msg.length)+msg.charAt(0);
+                setTimeout("scroll_title()",speed);
+        }
+        scroll_title();  
+  </script>
+</body>
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <style>
+      
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&display=swap');
+       * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+         }
+        body .abouts{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: 100vh;
+        /* background: linear-gradient(to right, #96c93d, #00b09b); */
+        color: #000;
+        }
+        body::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        /* clip-path: circle(30% at right 90%);
+        background: linear-gradient(#f00,#f0f); */
+       }
+        body::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        /* clip-path: circle(20% at 10% 10%);
+        background-image: linear-gradient(to right top, #0b65ed, #009dff, #00c3e2, #00de86, #a8eb12); */
+       }
+      .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        min-height: 150px;
+        margin: 0;
+        max-width: 1000px;
+        padding: 60px;
+        box-shadow: 0 20px 50px rgba(255,255,255,0.15);
+        background: rgba(255, 255, 255, 0.15);
+        z-index: 10;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255,255,255,0.5);
+        margin-top: 45px;
+        position: relative;
+      }
+      .abouts img{
+        height: 100px;
+        border-radius: 50px;
+        position: relative;
+        top:-120px;
+      }
+       .photo{
+        margin-top: -500px;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        position: absolute;
+        z-index: 20;
+      }
+      .desc{
+        border: 1px solid rgba(255,255,255,0.5);
+        width: 45%;
+        border-radius: 20px;
+        padding: 25px;
+        float: left;
+        text-align: justify;
+        text-justify: inter-word;
+        background: rgba(255, 255, 255, 0.15);
+      }
+     .container .about{
+        border: 1px solid rgba(255,255,255,0.5);
+        width: 45%;
+        border-radius: 20px;
+        padding: 25px;
+        float: right;
+        text-align: justify;
+        text-justify: inter-word;
+        background: rgba(255, 255, 255, 0.15);
+      }
+      .social-icons{
+        display: inline-flex;
+        justify-content: space-around;
+        align-content: space-between;
+        width: 45%;
+        float: right;
+        padding: 40px;
+      }
+      .share-btn {
+        cursor: pointer;
+        font-size: 30px;
+      }
+      .buttons{
+        display: inline-flex;
+        justify-content: space-around;
+        align-content: space-between;
+        width: 45%;
+        float: right;
+      }
+      .contact, .download{
+        text-decoration: none;
+        border: 1px solid rgba(255,255,255,0.5);
+        text-align: center;
+        border-radius: 5px;
+        width: 150px;
+        cursor: pointer;
+        padding: 15px;
+        font-weight: 900;
+        cursor: pointer;
+        color: #000;
+        background: rgba(255, 255, 255, 0.15);
+      }
+      .credit{
+          text-align: center;
+          color: #000;
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+          width: 100%;
+      }
+      .credit a{
+          text-decoration: none;
+          color: #072f5f;
+          font-weight: bold;
+      }
+      @media(max-width: 850px){
+        .abouts body{
+          padding: 60px;
+        }
+        .abouts  .desc{
+          width: 100%;
+          margin-bottom: 35px;
+        }
+        .about, .social-icons, .buttons{
+          width: 100%;
+        }
+        .abouts .photo{
+          margin-top:-370px;
+        }
+      }
+       
+      /* FOOTER START */
+    .footer 
+      {
+        background-color: #414141;
+        position: relative;
+        top:200px;
+        right:10px;
+        width: 100%;
+        text-align: left;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 50px;
+        margin-top: 40px;
+        padding-bottom:10px;
+      }
+      
+      .footer .footer-left,
+      .footer .footer-center,
+      .footer .footer-right
+        {
+        display: inline-block;
+        vertical-align: top;
+        
+      }
+      .footer-right
+      {
+        text-align: center;
+      }
+      
+      .footer-center
+      {
+            position: relative;
+            right: -80px;
+          
+      }
+      
+      /* footer left*/
+      
+      .footer .footer-left {
+        width: 33%;
+        padding-right: 15px;
+      }
+      
+      .footer .about {
+        line-height: 19px;
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: normal;
+        margin: 0;
+      }
+      
+      .footer .about span 
+      {
+        display: block;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 30px;
+      }
+      
+      .footer .icons
+        {
+      
+          position: relative;
+          display: flex;
+          margin-top: 15px;  
+          left:-8px;  
+      }
+      
+      .footer .icons a {
+          display: inline-block;
+          width: 35px;
+          height: 35px;
+          background: #096b65;
+          color:#fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-decoration: none;
+          margin: 7px;    
+          font-size: 20px;
+      }
+      
+      /* footer center*/
+      
+      .footer .footer-center {
+        width: 30%;
+      }
+      
+      .footer .footer-center i {
+        background-color: #096b65;
+        color: #ffffff;
+        font-size: 25px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 42px;
+        margin: 10px 15px;
+        vertical-align: middle;
+      }
+      
+      .footer .footer-center i.fa-envelope {
+        font-size: 17px;
+        line-height: 38px;
+      }
+      
+      .footer .footer-center p {
+        display: inline-block;
+        color: #ffffff;
+        vertical-align: middle;
+        margin: 0;
+      }
+      
+      .footer .footer-center p span {
+        display: block;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 2;
+      }
+      
+      .footer .footer-center p a {
+        color: #0099ff;
+        text-decoration: none;
+      }
+      
+      
+      /* footer right*/
+      
+      .footer .footer-right {
+        width: 35%;
+      }
+      
+      .footer h2 {
+        color: #ffffff;
+        font-size: 36px;
+        font-weight: normal;
+        margin: 0;
+      }
+      
+      .footer h2 span {
+        color: #0099ff;
+      }
+      
+      .footermenu {
+        color: #ffffff;
+        margin: 20px 0 12px;
+        padding: 0;
+      }
+      
+      .footermenu a {
+        display: inline-block;
+        line-height: 1.8;
+        text-decoration: none;
+        color: inherit;
+      }
+      
+      .footermenu a:hover {
+        color: #0099ff;
+      }
+      
+      .footer .name {
+        color: #0099ff;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+      }
+        .footername2 {
+          font-weight: normal;
+          margin: 0;
+      }
+      
+      @media (max-width: 767px ) {
+        .footer {
+          font-size: 14px;
+        }
+        .footer .footer-left,
+        .footer .footer-center,
+        .footer .footer-right {
+          display: block;
+          width: 100%;
+          margin-bottom: 40px;
+          text-align: center;
+          
+        }
+        .footer .footer-center i {
+          margin-left: 0;
+        }
+      }
+      /* FOOTER Finish */
+
+      </style>
+
+</head>
+
+<body>
+ 
+    <div class="menu">
+      <ul>
+          <li><a href="index.html">ANA SAYFA</a></li>
+          <li><a href="about-us.html">HAKKIMIZDA</a></li>
+          <li><a href="urunler.html">ÜRÜNLER</a></li>
+          <li><a href="contact.html">İLETİŞİM</a></li>  
+      </ul>
+  </div>
+  <a href="index.html">
+      <img style="border-radius:20px 20px; position:fixed;left:30px; top: 15px; height:70px;" src="https://img.freepik.com/free-vector/street-market-business-company-logo_23-2148462526.jpg?w=2000" alt="logo" >
+      </a>
+    <div class="abouts">
+    <div class="photo"> <a href="index.html"><img style="position: relative; top: 200px; height: 70px;border-radius: 20px 20px;" src="https://img.freepik.com/free-vector/street-market-business-company-logo_23-2148462526.jpg?w=2000"/></div></a>
+    <div class="container">
+      <div class="items">
+        <div style="font-size: 16px; font-family: Verdana, Geneva, Tahoma, sans-serif;" class="desc">
+             <p style="font-size: 18px;  text-align: center;position: relative; top:-17px;">Misyonumuz</p>
+              <p> Benzersiz hizmet kalitesi, öncü uygulamaları, zengin ürün çeşitliliği ve aile bütçesine katkıyı esas alan fiyatlandırmasıyla eşsiz bir alışveriş deneyimi sunmak. </p>
+              <p>Tüm paydaşları için değer yaratan; topluma ve çevreye duyarlı faaliyetlerde bulunmak.</p>
+            </div>
+            <div class="right" id="full">
+              <div class="about">
+                <p style="font-size: 18px;  text-align: center; position: relative; top:-17px; font-family: Verdana, Geneva, Tahoma, sans-serif;">Vizyonumuz</p>
+                <p  style="font-size: 16px; font-family: Verdana, Geneva, Tahoma, sans-serif;"> Fark yaratmak ve yüksek tüketici bilinci oluşturarak beklentiyi aşan hizmetler sunmak, yasal mevzuat ve düzenlemeler ile kurumsal yönetim ilkelerine bağlı kalarak sürekli gelişmeyi sağlamak tartışılmaz ilkemizdir. Kaliteli alışveriş deneyimi ile her zaman güvenilen ve tercih edilen ilk adres olmak.</p>
+                </div>
+                <div class="social-icons">
+                  <a class="share-btn">
+                    <i class="fab fa-facebook"></i>
+                  </a>
+                  <a class="share-btn" href="https://www.instagram.com/ahmetruyan/" target="_blank" >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a class="share-btn">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a class="share-btn" href="https://github.com/renaxis/projeler" target="_blank">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a class="share-btn">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                  </div>
+              
+              </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- FOOTER START -->
+    <footer style="position: relative; left: 0px; " class="footer">
+        <div class="footer-left col-md-4 col-sm-6">
+            <p class="about">
+              <span> Misyonumuz</span> İleri teknikleri ve son teknolojileri kullanarak, Ar-Ge çalışmalarımızı sürekli arttırarak Dünya pazarlarında kabul gören en yüksek standartlara sahip kaliteli ürünlerimizle uluslar arası bir marka olmak ve satış sonrası hizmetlerde hemen ulaşılabilirlik avantajımızla sürekli yenilikçi çözümler üretmektir.
+            </p>
+            <div class="icons">
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/ahmetruyan/" target="_blank"><i class="fa fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="footer-center col-md-4 col-sm-6">
+            <div> <a href="https://goo.gl/maps/yrMGErm5ftMXhM2h8" target="_blank">
+              <i class="fa fa-map-marker"></i></a>
+              <p ><span>Doğanbey Mahallesi, Talatpaşa Blv No:38</span> Ankara</p>
+            </div>
+            <div>
+              <a href="tel://+90000 000 0 000">
+              <i class="fa fa-phone"></i></a>
+              <p>0800 000 0 000 </p>
+            </div>
+            <div>
+        <a href="mailto:for@example.com">
+              <i class="fa fa-envelope"></i><a>
+              <p>E mail</p>
+            </div>
+          </div>
+          <div class="footer-right col-md-4 col-sm-6">
+           <a href="#"> 
+            <img style="height: 80px; border-radius:20px 20px;" src="https://img.freepik.com/free-vector/street-market-business-company-logo_23-2148462526.jpg?w=2000 ">
+            <p class="footermenu">
+              <a href="index.html">&#127968; Ana Sayfa</a> |
+              <a href="about-us.html">&#128209; Hakkımızda </a> |
+              <a href="urunler.html">&#128722; Ürünler </a> |
+              <a href="contact.html">&#128222; İletişim</a> 
+             
+            </p>
+            <p class="name">SuperMarketim &copy; 2022 All Right Reserved</p>
+            <p class="footername2" style="font-family:cursive;  color:rgb(7, 194, 194) ;">&#9889; Made by Ahmet Ruyan</p>
+          </div>
+        </footer> 
+    
+
+ <script src="https://kit.fontawesome.com/c39c442009.js" crossorigin="anonymous"></script>
+        
+<script language="JavaScript">
+
+    var left=" ";
+    var right=" ";
+    var msg="SuperMarketim.com Kalitenin Adresi ";
+    var speed=350;
+     
+    function scroll_title() {
+            document.title=left+msg+right;
+            msg=msg.substring(1,msg.length)+msg.charAt(0);
+            setTimeout("scroll_title()",speed);
+    }
+    scroll_title();
+     
+    </script>
+</body>
+</html>
