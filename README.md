@@ -1,2 +1,2 @@
-patika dev projesi için geliştirilmiş ilk web sayfam
+patika dev projesi için geliştirilmiş ilk web sayfalarım
  www.patika.dev
